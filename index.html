@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="form.js" defer></script>
+    <title>Resume Builder Form</title>
+  </head>
+  <body>
+    <form class="form">
+      <h1 class="text-center">Registration Form</h1>
+      <!-- Progress bar -->
+      <div class="progressbar">
+        <div class="progress" id="progress"></div>
+        
+        <div
+          class="progress-step progress-step-active"
+          data-title="Intro"
+        ></div>
+        <div class="progress-step" data-title="Education"></div>
+        <div class="progress-step" data-title="Skills"></div>
+        <div class="progress-step" data-title="Experience"></div>
+        <div class="progress-step" data-title="Get Resume"></div>
+      </div>
+
+      <!-- Steps -->
+      <div class="form-step form-step-active">
+      	<fieldset>
+      		<legend>Introduction</legend>
+        <div class="input-group">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" required/>
+        </div>
+        <div class="input-group">
+          <label for="address">Address</label>
+          <input type="text" name="address" id="address" required/>
+        </div>
+        <div class="input-group">
+          <label for="pno">Phone Number</label>
+          <input type="number" name="pno" id="pno" required/>
+        </div>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required/>
+        </div>
+    	<div class="input-group">
+          <label for="abtsum">About / Summary</label>
+          <textarea type="abtsum" name="abtsum" id="abtsum" required></textarea>
+        </div>
+
+        <div>
+          <a class="btn btn-next width-50 ml-auto" id="next1" onclick="introVal()">Next</a>
+        </div>
+    </fieldset>
+      </div>
+
+      <div class="form-step">
+        <fieldset>
+      		<legend>Education</legend>
+        <div class="input-group">
+          <label for="suname">School/university Name</label>
+          <input type="text" name="suname" id="suname" required/>
+        </div>
+        <div class="input-group">
+          <label for="suaddress">School/university Address</label>
+          <input type="text" name="suaddress" id="suaddress" required/>
+        </div>
+        <div class="input-group">
+          <label for="weblink">School/university Website Link (optional)</label>
+          <input type="text" name="weblink" id="weblink" />
+        </div>
+        <div class="input-group">
+          <label for="degree">Degree</label>
+          <input type="text" name="degree" id="degree" required/>
+        </div>
+        <div class="input-group">
+          <label for="poyr">Passed Out Year</label>
+          <input type="date" name="poyr" id="poyr" required/>
+        </div>
+    	<div class="input-group">
+          <label for="abtsummaryed">About / Summary</label>
+          <textarea type="abtsummaryed" name="abtsummaryed" id="abtsummaryed" required></textarea>
+        </div>
+
+        <div class="btns-group">
+          <a class="btn btn-prev">Previous</a>
+          <a class="btn btn-next" id="next2" onclick="eduVal()">Next</a>
+        </div>
+    </fieldset>
+      </div>
+      <div class="form-step">
+        
+        <fieldset>
+      		<legend>Skills</legend>
+        <div class="input-group">
+          <label for="skill1">Skill 1</label>
+          <input type="text" name="skill1" id="skill1" required/>
+        </div>
+        <div class="input-group">
+          <label for="skill2">Skill 2</label>
+          <input type="text" name="skill2" id="skill2" required/>
+        </div>
+        <div class="input-group">
+          <label for="skill3">Skill 3</label>
+          <input type="text" name="skill3" id="skill3" required/>
+        </div>
+        <div class="input-group">
+          <label for="skill4">Skill 4 (optional)</label>
+          <input type="text" name="skill4" id="skill4" />
+        </div>
+        <div class="input-group">
+          <label for="skill5">Skill 5 (optional)</label>
+          <input type="text" name="skill5" id="skill5" />
+        </div>
+    
+        <div class="btns-group">
+          <a class="btn btn-prev">Previous</a>
+          <a class="btn btn-next" id="next3" onclick="skillVal()">Next</a>
+        </div>
+    </fieldset>
+        
+      </div>
+      <div class="form-step">
+         <fieldset>
+      		<legend>Experience</legend>
+        <div class="input-group">
+          <label for="coname">Company Name</label>
+          <input type="text" name="coname" id="coname" required/>
+        </div>
+        <div class="input-group">
+          <label for="position">Position</label>
+          <input type="text" name="position" id="position" required/>
+        </div>
+        <div class="input-group">
+          <label for="from">From</label>
+          <input type="date" name="from" id="from" required/>
+        </div>
+        <div class="input-group">
+          <label for="to">To</label>
+          <input type="date" name="to" id="to" required/>
+        </div>
+        <div class="input-group">
+          <label for="yrexp">Years of experience</label>
+          <input type="number" name="yrexp" id="yrexp" required/>
+        </div>
+        <div class="input-group">
+          <label for="abtsumco">About / Summary</label>
+          <textarea type="abtsumco" name="abtsumco" id="abtsumco" required></textarea>
+        </div>
+
+        <div class="btns-group">
+          <a class="btn btn-prev">Previous</a>
+          <a class="btn btn-next" id="next4" onclick="expVal()">Submit</a>
+        </div>
+    </fieldset>
+      </div>
+
+      <div class="form-step">
+         <fieldset>
+      		<legend>Get Resume</legend>
+        
+        <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="title text-center">
+          <h1 id="Name1"></h1>
+          <h3 id="Position1"></h3>
+          <h4 id="email1"></h4>
+          <hr />
+          
+        </div>
+
+        <!-- summary section -->
+        <div class="summary">
+          <h1 class="text-center">About / Summary</h2>
+          <p id="abtsummary1"></p>
+          <hr />
+
+        <!-- Education section -->
+        <div class="work-experience">
+          <h1 class="text-center">Education History</h2>
+          <div class="row experience-title">
+            <div class="col-md-9">
+              <h3 id="suname1"></h3>
+              <h4 id="suaddress1"></h4>
+              <h5 id="degree1"></h5>
+              <h6 id="pasyr1"></h6>
+            </div>
+            
+          </div>
+          <div class="row experience-summary">
+            <div class="col-md-12">
+              <p id="abtsummary3"></p>
+            </div>
+          </div>
+        </div>
+        
+        <hr/>
+
+          <div class="row">
+            <div class="col-md-3 col-sm-3">
+            	<h1 class="text-center">Skills</h2>
+            	<ul style="font-size: 15px;">
+              <li id="skill11"></li>
+              <li id="skill12"></li>
+              <li id="skill13"></li>
+              <li id="skill14"></li>
+              <li id="skill15"></li>
+          </ul>
+            </div>
+            
+          </div>
+          
+        </div>
+        
+        <hr/>
+        <!-- work experience section -->
+        <div class="work-experience">
+          <h1 class="text-center">Work Experience</h2>
+          <div class="row experience-title">
+            <div class="col-md-9">
+              <h3 id="coname1"></h3>
+              <h4 id="Position1"></h4>
+              <h5 id="yrexp1"></h5>
+            </div>
+            <div class="col-md-3">
+              <h6>From : <pre id="from1"></pre>To : <pre id="to1"></pre></h6>
+            </div>
+          </div>
+          <div class="row experience-summary">
+            <div class="col-md-12">
+              <p id="abtsummary2"></p>
+            </div>
+          </div>
+          
+          <!-- Corasent -->
+         
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+        <div class="btns-group">
+          <a class="btn btn-prev">Previous</a>
+          <a class="btn" id="next5" onclick="window.print()">Download / Print</a>
+        </div>
+    </fieldset>
+      </div>
+
+
+    </form>
+  </body>
+</html>
